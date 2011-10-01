@@ -31,6 +31,7 @@ function init(){
   cards.innerHTML += '<aside id="win"><p>All found&hellip; - resetting</p>'+
                      '</aside>';
   cards.addEventListener( 'click', checkcard, false );
+  cards.addEventListener( 'touchmove', checkcard, false );
   moveelm = document.querySelector( '#moves' );
   document.body.className = document.body.className.replace( 'win', '' );
 
@@ -45,6 +46,11 @@ function init(){
 function checkcard( e ) {
   
   if ( !clickable ) { return; }
+
+  if ( e.touches && e.touches.length === 1 ) {
+    e.target = e.touches[0].target;
+  }
+  
   if ( e.target.tagName !== 'FIGURE' ) { return; }
   mom = e.target.parentNode;
   if ( mom.solved ) { return; }
