@@ -1,0 +1,143 @@
+@font-face {
+    font-family: 'MuseoSans500';
+    src: url('MuseoSans_500-webfont.eot');
+    src: url('MuseoSans_500-webfont.eot?#iefix') format('embedded-opentype'),
+         url('MuseoSans_500-webfont.woff') format('woff'),
+         url('MuseoSans_500-webfont.ttf') format('truetype'),
+         url('MuseoSans_500-webfont.svg#MuseoSans500') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+html, body {
+  height: 100%;
+  background: #6cf;
+  background: -webkit-linear-gradient( #6cf, #eee );
+  background: -moz-linear-gradient( #6cf, #eee );
+  background: -o-linear-gradient( #6cf, #eee );
+  background: -ms-linear-gradient( #6cf, #eee );
+  background: linear-gradient( #6cf, #eee );
+  font-family: 'MuseoSans500', helvetica, arial, sans-serif;
+}
+#cards, h1 {
+  width: 440px;
+  overflow: auto;
+  margin: 10px auto;
+  position: relative;
+  font-size: 40px;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+}
+.container  {
+  width:  100px;
+  height:  100px;
+  float:  left;
+  position: relative;
+  margin:  5px;
+  -webkit-perspective:  500;
+}
+aside {
+  clear: both;
+  margin: 10px 0;
+  padding: 0 10px;
+  text-align: right;
+  font-size: 24px;
+}
+.card  {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  -webkit-transition: -webkit-transform .8s;
+  -webkit-transform-style: preserve-3d;
+  -webkit-transform-origin: center center;
+}
+.card.flipped  {
+  -webkit-transform: rotateY(  -180deg  );
+}
+.card figure  {
+  display: block;
+  height: 100%;
+  width: 100%;
+  line-height: 100px;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 140px;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+}
+.card .front  {
+  background:  url( 5logo.png ) #369 center center no-repeat;
+  background-size: 90px;
+}
+.card .back  {
+  -webkit-transform: rotateY(  180deg  );
+}
+.card .ie {
+  background: url( ie.png ) center center no-repeat #333;
+}
+.card .fx {
+  background: url( firefox.png ) center center no-repeat #333
+}
+.card .op {
+  background: url( opera.png ) center center no-repeat #333
+}
+.card .cr {
+  background: url( chrome.png ) center center no-repeat #333
+}
+.card .sf {
+  background: url( safari.png ) center center no-repeat #333
+}
+.card .h5 {
+  background: url( 5logo.png ) center center no-repeat #333;
+}
+.card .ny {
+  background: url( K47uNg.png ) center center no-repeat #333;
+  background-size: 100px
+}
+.notransforms .card .back {
+  display: none;
+}
+.notransforms .card .front {
+  display: block;
+}
+.notransforms .flipped .back {
+  display: block;
+}
+.notransforms .flipped .front {
+  display: none;
+}
+#win {
+  position: absolute;
+  color: #fff;
+  background: rgba( 0, 0, 0, 0.7 );
+  text-align: left;
+  border-radius:  10px;
+  margin: 0;
+  padding: 5px 10px;
+  top: 130px;
+  left: 100px;
+  display: none;
+}
+.win #win {
+  display: block;
+}
+#win p {
+  text-align: center;
+  font-size: 20px;
+  font-family: verdana;
+}
+#images {
+  font-size: 16px;
+  line-height: 40px;
+  width: 440px;
+  margin: 10px auto;
+  text-align: center;
+}
+#images img {
+  width:40px;
+  vertical-align: middle;
+}
