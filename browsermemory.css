@@ -37,8 +37,8 @@ html, body {
   float:  left;
   position: relative;
   margin:  5px;
-  -webkit-perspective:  500;
-  -moz-perspective:  500;
+  -webkit-perspective:  500px;
+  -moz-perspective:  500px;
 }
 aside {
   clear: both;
