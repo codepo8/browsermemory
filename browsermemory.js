@@ -4,9 +4,11 @@ var old = null,
     allsolved = 0,
     moves = 0,
     failelm = null, 
-    delay = 1500;
+    delay = 1500,
+    audio;
 
 function init(){
+  moves = 0;
   var browsers = 'ie-fx-op-cr-sf-ny'.split( '-' ),
       ar = browsers.concat( browsers ),
       sa = [],
@@ -40,7 +42,7 @@ function init(){
     delay = 500;
     document.body.className = 'notransforms';
   }  
-
+  audio = document.querySelectorAll( 'audio' );
 }
 
 function checkcard( e ) {
@@ -67,10 +69,12 @@ function checkcard( e ) {
       old.solved = mom.solved = true;
       old = null;
       allsolved++;
+      audio[1].play();
       if( allsolved === 6 ) { 
         win(); 
       }
     } else {
+      audio[0].play();
       clickable = false;
       x = setTimeout( clear, delay );
     }
@@ -83,6 +87,7 @@ function checkcard( e ) {
 function win() {
 
   document.body.className += ' win';
+  audio[2].play();
   setTimeout( function() {
     var cards = document.querySelectorAll( '.card' );
     for (i = cards.length-1; i >= 0; i-- ) {
@@ -94,7 +99,6 @@ function win() {
 }
 
 function clear() {
-
   clickable = true;
   old.className = old.className.replace(' flipped','');
   mom.className = mom.className.replace(' flipped','');
