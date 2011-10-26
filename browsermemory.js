@@ -9,6 +9,8 @@ var old = null,
 
 function init(){
   moves = 0;
+  allsolved = 0;
+
   var browsers = 'ie-fx-op-cr-sf-ny'.split( '-' ),
       ar = browsers.concat( browsers ),
       sa = [],
